@@ -1,0 +1,83 @@
+group 'com.scichart.sci_chart'
+version '1.0-SNAPSHOT'
+
+buildscript {
+    ext.kotlin_version = '1.7.10'
+    repositories {
+        google()
+        mavenCentral()
+        maven { url 'https://www.myget.org/F/abtsoftware/maven' }
+    }
+
+    dependencies {
+        classpath 'com.android.tools.build:gradle:7.3.0'
+        classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version"
+    }
+}
+
+allprojects {
+    repositories {
+        google()
+        mavenCentral()
+        maven { url 'https://www.myget.org/F/abtsoftware/maven' }
+    }
+}
+
+apply plugin: 'com.android.library'
+apply plugin: 'kotlin-android'
+
+android {
+    if (project.android.hasProperty("namespace")) {
+        namespace 'com.scichart.sci_chart'
+    }
+
+    compileSdkVersion 33
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+
+    kotlinOptions {
+        jvmTarget = '1.8'
+    }
+
+    sourceSets {
+        main.java.srcDirs += 'src/main/kotlin'
+        test.java.srcDirs += 'src/test/kotlin'
+    }
+
+    defaultConfig {
+        minSdkVersion 19
+    }
+
+    dependencies {
+        testImplementation 'org.jetbrains.kotlin:kotlin-test'
+        testImplementation 'org.mockito:mockito-core:5.0.0'
+
+        def sciChart_version = "4.5.0.4853"
+
+        // Declare SciChart libraries as module dependencies
+        implementation (group: 'com.scichart.library', name: 'core', version: sciChart_version, ext: 'aar')
+        implementation (group: 'com.scichart.library', name: 'data', version: sciChart_version, ext: 'aar')
+        implementation (group: 'com.scichart.library', name: 'drawing', version: sciChart_version, ext: 'aar')
+        implementation (group: 'com.scichart.library', name: 'charting', version: sciChart_version, ext: 'aar')
+        implementation (group: 'com.scichart.library', name: 'charting3d', version: sciChart_version, ext: 'aar')
+
+        // Declare SciChart extension library as module dependencies
+        implementation (group: 'com.scichart.library', name: 'extensions', version: sciChart_version, ext: 'aar')
+        implementation (group: 'com.scichart.library', name: 'extensions3d', version: sciChart_version, ext: 'aar')
+    }
+
+    testOptions {
+        unitTests.all {
+            useJUnitPlatform()
+
+            testLogging {
+               events "passed", "skipped", "failed", "standardOut", "standardError"
+               outputs.upToDateWhen {false}
+               showStandardStreams = true
+            }
+        }
+    }
+}
