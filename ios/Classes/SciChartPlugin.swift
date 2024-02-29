@@ -3,9 +3,9 @@ import UIKit
 
 public class SciChartPlugin: NSObject, FlutterPlugin {
   public static func register(with registrar: FlutterPluginRegistrar) {
-    let channel = FlutterMethodChannel(name: "sci_chart", binaryMessenger: registrar.messenger())
-    let instance = SciChartPlugin()
-    registrar.addMethodCallDelegate(instance, channel: channel)
+      
+      let baseBandFactory = FlutterBaseBandChartViewFactory(messenger: registrar.messenger())
+      registrar.register(baseBandFactory, withId: "com.scichart/scichart_base_band_chart")
   }
 
   public func handle(_ call: FlutterMethodCall, result: @escaping FlutterResult) {
