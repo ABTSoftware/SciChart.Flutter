@@ -11,6 +11,7 @@ import SciChart
 
 class FlutterBaseBandChartView: NSObject, FlutterPlatformView {
     private var _view: UIView
+    let surface = SCIChartSurface()
 
     init(
         frame: CGRect,
@@ -21,9 +22,8 @@ class FlutterBaseBandChartView: NSObject, FlutterPlatformView {
         _view = UIView()
         super.init()
         // iOS views can be created here
-
-        let vc = BandChartView()
-        _view.addSubview(vc.view)
+        
+        createNativeView(view: _view)
     }
 
     func view() -> UIView {
@@ -31,12 +31,39 @@ class FlutterBaseBandChartView: NSObject, FlutterPlatformView {
     }
 
     func createNativeView(view _view: UIView){
-        _view.backgroundColor = UIColor.blue
-        let nativeLabel = UILabel()
-        nativeLabel.text = "Native text from iOS"
-        nativeLabel.textColor = UIColor.white
-        nativeLabel.textAlignment = .center
-        nativeLabel.frame = CGRect(x: 0, y: 0, width: 180, height: 48.0)
-        _view.addSubview(nativeLabel)
+        
+        let xAxis = SCINumericAxis()
+        xAxis.visibleRange = SCIDoubleRange(min: 1.1, max: 2.7)
+        
+        let yAxis = SCINumericAxis()
+        yAxis.growBy = SCIDoubleRange(min: 0.1, max: 0.1)
+        
+        let data = SCDDataManager.getDampedSinewave(withAmplitude: 1.0, dampingFactor: 0.01, pointCount: 1000, freq: 10)
+        let moreData = SCDDataManager.getDampedSinewave(withAmplitude: 1.0, dampingFactor: 0.005, pointCount: 1000, freq: 12)
+        
+        let dataSeries = SCIXyyDataSeries(xType: .double, yType: .double)
+        dataSeries.append(x: data.xValues, y: data.yValues, y1: moreData.yValues)
+        
+        let rSeries = SCIFastBandRenderableSeries()
+        rSeries.dataSeries = dataSeries
+        rSeries.fillBrushStyle = SCISolidBrushStyle(color: 0x3350C7E0)
+        rSeries.fillY1BrushStyle = SCISolidBrushStyle(color: 0x33F48420)
+        rSeries.strokeStyle =  SCISolidPenStyle(color: 0xFF50C7E0, thickness: 2.0)
+        rSeries.strokeY1Style = SCISolidPenStyle(color: 0xFFF48420, thickness: 2.0)
+        
+        let easingFunction = SCIElasticEase()
+        easingFunction.oscillations = 1
+        easingFunction.springiness = 5
+        
+        SCIUpdateSuspender.usingWith(surface) {
+            self.surface.xAxes.add(xAxis)
+            self.surface.yAxes.add(yAxis)
+            self.surface.renderableSeries.add(rSeries)
+            self.surface.chartModifiers.add(SCDExampleBaseViewController.createDefaultModifiers())
+            
+            SCIAnimations.scale(rSeries, duration: 1.0, andEasingFunction: easingFunction)
+        }
+        
+        _view.addSubview(surface)
     }
 }
