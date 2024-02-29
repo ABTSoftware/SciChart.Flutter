@@ -1,0 +1,1031 @@
+framework module SciChart {
+    umbrella header "SciChart.h"
+    
+    export *
+    module * { export * }
+    
+    // Exclude headers unavailable on macOS
+    exclude header "UIView+NSView.h"
+    exclude header "UIImage+NSImage.h"
+    exclude header "UIImageView+NSImageView.h"
+    exclude header "UIButton+NSButton.h"
+    exclude header "UICollectionView+NSCollectionView.h"
+    exclude header "UICollectionViewCell+NSCollectionViewItem.h"
+    exclude header "SCIFreeLookModifier3D.h"
+    exclude header "SCIOpenGLRenderSurfaceBase.h"
+    exclude header "SCIOpenGLRenderSurface.h"
+    exclude header "SCIOpenGLRenderSurface3D.h"
+    
+    // Exclude headers unavailable on iOS
+    exclude header "NSView+UIView.h"
+    exclude header "NSFont+UIFont.h"
+    exclude header "NSTextView+UITextView.h"
+    exclude header "NSLabel.h"
+    exclude header "NSImage+UIImage.h"
+    exclude header "NSButton+UIButton.h"
+    exclude header "NSGestureRecognizer+UIGestureRecognizer.h"
+    exclude header "NSMagnificationGestureRecognizer+UIPinchGestureRecognizer.h"
+    exclude header "NSCollectionView+UICollectionView.h"
+    exclude header "NSCollectionViewItem+UICollectionViewCell.h"
+    exclude header "NSCollectionViewLayoutAttributes+UICollectionViewLayoutAttributes.h"
+    
+    explicit module Utils {
+        header "NSObject+ExceptionUtil.h"
+        header "SCIObjCRuntimeHelper.h"
+    }
+    
+    explicit module Protected {
+        //BeginAutogen
+
+        explicit module SCIDrawableText {
+            header "SCIDrawableText+Protected.h"
+            export *
+        }
+
+        explicit module SCIAssetManagerBase {
+            header "SCIAssetManagerBase+Protected.h"
+            export *
+        }
+
+        explicit module SCISmartPropertyDouble {
+            header "SCISmartPropertyDouble+Protected.h"
+            export *
+        }
+
+        explicit module SCISmartPropertyFloat {
+            header "SCISmartPropertyFloat+Protected.h"
+            export *
+        }
+
+        explicit module SCISmartProperty {
+            header "SCISmartProperty+Protected.h"
+            export *
+        }
+
+        explicit module SCISmartPropertyBool {
+            header "SCISmartPropertyBool+Protected.h"
+            export *
+        }
+
+        explicit module SCISmartPropertyInt {
+            header "SCISmartPropertyInt+Protected.h"
+            export *
+        }
+
+        explicit module SCISmartPropertyLong {
+            header "SCISmartPropertyLong+Protected.h"
+            export *
+        }
+
+        explicit module SCIViewportManagerBase3D {
+            header "SCIViewportManagerBase3D+Protected.h"
+            export *
+        }
+
+        explicit module SCIChartModifier3DBase {
+            header "SCIChartModifier3DBase+Protected.h"
+            export *
+        }
+
+        explicit module SCILegendModifier3D {
+            header "SCILegendModifier3D+Protected.h"
+            export *
+        }
+
+        explicit module SCIGestureModifierBase3D {
+            header "SCIGestureModifierBase3D+Protected.h"
+            export *
+        }
+
+        explicit module SCIZoomExtentsModifier3D {
+            header "SCIZoomExtentsModifier3D+Protected.h"
+            export *
+        }
+
+        explicit module SCIVertexSelectionModifier3D {
+            header "SCIVertexSelectionModifier3D+Protected.h"
+            export *
+        }
+
+        explicit module SCITooltipModifierBase3D {
+            header "SCITooltipModifierBase3D+Protected.h"
+            export *
+        }
+
+        explicit module SCIMasterSlaveTouchModifierBase3D {
+            header "SCIMasterSlaveTouchModifierBase3D+Protected.h"
+            export *
+        }
+
+        explicit module SCITooltipModifier3D {
+            header "SCITooltipModifier3D+Protected.h"
+            export *
+        }
+
+        explicit module SCITooltipBehavioWithCrosshairBehavior3D {
+            header "SCITooltipBehavioWithCrosshairBehavior3D+Protected.h"
+            export *
+        }
+
+        explicit module SCITooltipBehaviorBase3D {
+            header "SCITooltipBehaviorBase3D+Protected.h"
+            export *
+        }
+
+        explicit module SCICrosshairSceneEntityBase {
+            header "SCICrosshairSceneEntityBase+Protected.h"
+            export *
+        }
+
+        explicit module SCIDataSeries3D {
+            header "SCIDataSeries3D+Protected.h"
+            export *
+        }
+
+        explicit module SCIDisplaceableFreeSurfaceDataSeries3D {
+            header "SCIDisplaceableFreeSurfaceDataSeries3D+Protected.h"
+            export *
+        }
+
+        explicit module SCIFreeSurfaceDataSeries3D {
+            header "SCIFreeSurfaceDataSeries3D+Protected.h"
+            export *
+        }
+
+        explicit module SCIBaseGridDataSeries3D {
+            header "SCIBaseGridDataSeries3D+Protected.h"
+            export *
+        }
+
+        explicit module SCISeriesRenderPassData3D {
+            header "SCISeriesRenderPassData3D+Protected.h"
+            export *
+        }
+
+        explicit module SCIBaseRenderableSeries3D {
+            header "SCIBaseRenderableSeries3D+Protected.h"
+            export *
+        }
+
+        explicit module SCIBaseRenderableSeriesSceneEntity3D {
+            header "SCIBaseRenderableSeriesSceneEntity3D+Protected.h"
+            export *
+        }
+
+        explicit module SCIWaterfallRenderableSeries3D {
+            header "SCIWaterfallRenderableSeries3D+Protected.h"
+            export *
+        }
+
+        explicit module SCISurfaceMeshRenderableSeries3D {
+            header "SCISurfaceMeshRenderableSeries3D+Protected.h"
+            export *
+        }
+
+        explicit module SCIFreeSurfaceRenderableSeries3D {
+            header "SCIFreeSurfaceRenderableSeries3D+Protected.h"
+            export *
+        }
+
+        explicit module SCIColumnRenderableSeries3D {
+            header "SCIColumnRenderableSeries3D+Protected.h"
+            export *
+        }
+
+        explicit module SCIContourMeshRenderableSeries3DBase {
+            header "SCIContourMeshRenderableSeries3DBase+Protected.h"
+            export *
+        }
+
+        explicit module SCISeriesTooltip3DBase {
+            header "SCISeriesTooltip3DBase+Protected.h"
+            export *
+        }
+
+        explicit module SCISeriesInfo3DProviderBase {
+            header "SCISeriesInfo3DProviderBase+Protected.h"
+            export *
+        }
+
+        explicit module SCISeriesInfo3D {
+            header "SCISeriesInfo3D+Protected.h"
+            export *
+        }
+
+        explicit module SCIAxisBase3D {
+            header "SCIAxisBase3D+Protected.h"
+            export *
+        }
+
+        explicit module SCILogarithmicNumericAxis3D {
+            header "SCILogarithmicNumericAxis3D+Protected.h"
+            export *
+        }
+
+        explicit module SCIDateAxis3D {
+            header "SCIDateAxis3D+Protected.h"
+            export *
+        }
+
+        explicit module SCIRangeCalculationHelper3DBase {
+            header "SCIRangeCalculationHelper3DBase+Protected.h"
+            export *
+        }
+
+        explicit module SCICamera3D {
+            header "SCICamera3D+Protected.h"
+            export *
+        }
+
+        explicit module SCIBasePointMarker3D {
+            header "SCIBasePointMarker3D+Protected.h"
+            export *
+        }
+
+        explicit module SCIBaseTexturePointMarker3D {
+            header "SCIBaseTexturePointMarker3D+Protected.h"
+            export *
+        }
+
+        explicit module SCIViewportManagerBase2D {
+            header "SCIViewportManagerBase2D+Protected.h"
+            export *
+        }
+
+        explicit module SCIViewportManagerBase {
+            header "SCIViewportManagerBase+Protected.h"
+            export *
+        }
+
+        explicit module SCIChartModifierCore {
+            header "SCIChartModifierCore+Protected.h"
+            export *
+        }
+
+        explicit module SCIChartModifierBase {
+            header "SCIChartModifierBase+Protected.h"
+            export *
+        }
+
+        explicit module SCISeriesSelectionModifier {
+            header "SCISeriesSelectionModifier+Protected.h"
+            export *
+        }
+
+        explicit module SCIPieChartTooltipModifier {
+            header "SCIPieChartTooltipModifier+Protected.h"
+            export *
+        }
+
+        explicit module SCIPinchZoomModifier {
+            header "SCIPinchZoomModifier+Protected.h"
+            export *
+        }
+
+        explicit module SCIAxisDragModifierBase {
+            header "SCIAxisDragModifierBase+Protected.h"
+            export *
+        }
+
+        explicit module SCIGestureModifierBase {
+            header "SCIGestureModifierBase+Protected.h"
+            export *
+        }
+
+        explicit module SCIZoomPanModifier {
+            header "SCIZoomPanModifier+Protected.h"
+            export *
+        }
+
+        explicit module SCIZoomExtentsModifier {
+            header "SCIZoomExtentsModifier+Protected.h"
+            export *
+        }
+
+        explicit module SCIPieChartMasterSlaveTouchModifierBase {
+            header "SCIPieChartMasterSlaveTouchModifierBase+Protected.h"
+            export *
+        }
+
+        explicit module SCIPieSegmentSelectionModifier {
+            header "SCIPieSegmentSelectionModifier+Protected.h"
+            export *
+        }
+
+        explicit module SCIPieChartGestureModifierBase {
+            header "SCIPieChartGestureModifierBase+Protected.h"
+            export *
+        }
+
+        explicit module SCIRubberBandXyZoomModifier {
+            header "SCIRubberBandXyZoomModifier+Protected.h"
+            export *
+        }
+
+        explicit module SCIPieChartTooltipModifierBase {
+            header "SCIPieChartTooltipModifierBase+Protected.h"
+            export *
+        }
+
+        explicit module SCIPieChartLegendModifier {
+            header "SCIPieChartLegendModifier+Protected.h"
+            export *
+        }
+
+        explicit module SCILegendModifier {
+            header "SCILegendModifier+Protected.h"
+            export *
+        }
+
+        explicit module SCILegendDataSource {
+            header "SCILegendDataSource+Protected.h"
+            export *
+        }
+
+        explicit module SCIChartLegendLayout {
+            header "SCIChartLegendLayout+Protected.h"
+            export *
+        }
+
+        explicit module SCIRolloverModifier {
+            header "SCIRolloverModifier+Protected.h"
+            export *
+        }
+
+        explicit module SCICursorModifier {
+            header "SCICursorModifier+Protected.h"
+            export *
+        }
+
+        explicit module SCIMasterSlaveTouchModifierBase {
+            header "SCIMasterSlaveTouchModifierBase+Protected.h"
+            export *
+        }
+
+        explicit module SCITooltipModifierBase {
+            header "SCITooltipModifierBase+Protected.h"
+            export *
+        }
+
+        explicit module SCITooltipModifier {
+            header "SCITooltipModifier+Protected.h"
+            export *
+        }
+
+        explicit module SCITooltipModifierWithAxisLabelsBase {
+            header "SCITooltipModifierWithAxisLabelsBase+Protected.h"
+            export *
+        }
+
+        explicit module SCISeriesValueMarkerAnnotation {
+            header "SCISeriesValueMarkerAnnotation+Protected.h"
+            export *
+        }
+
+        explicit module SCISeriesValueMarkerBase {
+            header "SCISeriesValueMarkerBase+Protected.h"
+            export *
+        }
+
+        explicit module SCIDefaultSeriesValueMarkerAnnotationHelper {
+            header "SCIDefaultSeriesValueMarkerAnnotationHelper+Protected.h"
+            export *
+        }
+
+        explicit module SCISeriesValueModifier {
+            header "SCISeriesValueModifier+Protected.h"
+            export *
+        }
+
+        explicit module SCIDefaultSeriesValueMarker {
+            header "SCIDefaultSeriesValueMarker+Protected.h"
+            export *
+        }
+
+        explicit module SCIModifierBehavior {
+            header "SCIModifierBehavior+Protected.h"
+            export *
+        }
+
+        explicit module SCIDrawableBehavior {
+            header "SCIDrawableBehavior+Protected.h"
+            export *
+        }
+
+        explicit module SCITooltipBehaviorBase {
+            header "SCITooltipBehaviorBase+Protected.h"
+            export *
+        }
+
+        explicit module SCIVerticalSliceBehaviorBase {
+            header "SCIVerticalSliceBehaviorBase+Protected.h"
+            export *
+        }
+
+        explicit module SCIPieChartTooltipBehaviorBase {
+            header "SCIPieChartTooltipBehaviorBase+Protected.h"
+            export *
+        }
+
+        explicit module SCIAxisTooltipsBehaviorBase {
+            header "SCIAxisTooltipsBehaviorBase+Protected.h"
+            export *
+        }
+
+        explicit module SCITooltipBehavior {
+            header "SCITooltipBehavior+Protected.h"
+            export *
+        }
+
+        explicit module SCITooltipLayoutHelper {
+            header "SCITooltipLayoutHelper+Protected.h"
+            export *
+        }
+
+        explicit module SCIDoubleValueIndexProvider {
+            header "SCIDoubleValueIndexProvider+Protected.h"
+            export *
+        }
+
+        explicit module SCIDataSeriesIndexDataProvider {
+            header "SCIDataSeriesIndexDataProvider+Protected.h"
+            export *
+        }
+
+        explicit module SCIManualIndexDataProvider {
+            header "SCIManualIndexDataProvider+Protected.h"
+            export *
+        }
+
+        explicit module SCIIndexProviderBase {
+            header "SCIIndexProviderBase+Protected.h"
+            export *
+        }
+
+        explicit module SCIChartModifierCollectionBase {
+            header "SCIChartModifierCollectionBase+Protected.h"
+            export *
+        }
+
+        explicit module SCIXDataSeries {
+            header "SCIXDataSeries+Protected.h"
+            export *
+        }
+
+        explicit module SCIDataSeriesCore {
+            header "SCIDataSeriesCore+Protected.h"
+            export *
+        }
+
+        explicit module SCIDataSeries {
+            header "SCIDataSeries+Protected.h"
+            export *
+        }
+
+        explicit module SCIChartHeatmapColourMap {
+            header "SCIChartHeatmapColourMap+Protected.h"
+            export *
+        }
+
+        explicit module SCIPointMarkerBase {
+            header "SCIPointMarkerBase+Protected.h"
+            export *
+        }
+
+        explicit module SCIStyleBase {
+            header "SCIStyleBase+Protected.h"
+            export *
+        }
+
+        explicit module SCIBaseColumnRenderableSeries {
+            header "SCIBaseColumnRenderableSeries+Protected.h"
+            export *
+        }
+
+        explicit module SCIFastBubbleRenderableSeries {
+            header "SCIFastBubbleRenderableSeries+Protected.h"
+            export *
+        }
+
+        explicit module SCIFastMountainRenderableSeries {
+            header "SCIFastMountainRenderableSeries+Protected.h"
+            export *
+        }
+
+        explicit module SCIVerticallyStackedSeriesCollection {
+            header "SCIVerticallyStackedSeriesCollection+Protected.h"
+            export *
+        }
+
+        explicit module SCIBaseBandRenderableSeries {
+            header "SCIBaseBandRenderableSeries+Protected.h"
+            export *
+        }
+
+        explicit module SCIFastBandRenderableSeries {
+            header "SCIFastBandRenderableSeries+Protected.h"
+            export *
+        }
+
+        explicit module SCIFastUniformHeatmapRenderableSeries {
+            header "SCIFastUniformHeatmapRenderableSeries+Protected.h"
+            export *
+        }
+
+        explicit module SCIHorizontallyStackedColumnsCollection {
+            header "SCIHorizontallyStackedColumnsCollection+Protected.h"
+            export *
+        }
+
+        explicit module SCIRenderableSeriesCore {
+            header "SCIRenderableSeriesCore+Protected.h"
+            export *
+        }
+
+        explicit module SCIFastErrorBarsRenderableSeries {
+            header "SCIFastErrorBarsRenderableSeries+Protected.h"
+            export *
+        }
+
+        explicit module SCIStackedMountainRenderableSeries {
+            header "SCIStackedMountainRenderableSeries+Protected.h"
+            export *
+        }
+
+        explicit module SCIOhlcRenderableSeriesBase {
+            header "SCIOhlcRenderableSeriesBase+Protected.h"
+            export *
+        }
+
+        explicit module SCIFastLineRenderableSeries {
+            header "SCIFastLineRenderableSeries+Protected.h"
+            export *
+        }
+
+        explicit module SCIVerticallyStackedColumnsCollection {
+            header "SCIVerticallyStackedColumnsCollection+Protected.h"
+            export *
+        }
+
+        explicit module SCIFastFixedErrorBarsRenderableSeries {
+            header "SCIFastFixedErrorBarsRenderableSeries+Protected.h"
+            export *
+        }
+
+        explicit module SCIBaseMountainRenderableSeries {
+            header "SCIBaseMountainRenderableSeries+Protected.h"
+            export *
+        }
+
+        explicit module SCIFastCandlestickRenderableSeries {
+            header "SCIFastCandlestickRenderableSeries+Protected.h"
+            export *
+        }
+
+        explicit module SCIRenderableSeriesBase {
+            header "SCIRenderableSeriesBase+Protected.h"
+            export *
+        }
+
+        explicit module SCIStackedSeriesCollectionBase {
+            header "SCIStackedSeriesCollectionBase+Protected.h"
+            export *
+        }
+
+        explicit module SCIPieDonutRenderableSeriesBase {
+            header "SCIPieDonutRenderableSeriesBase+Protected.h"
+            export *
+        }
+
+        explicit module SCIDonutRenderableSeries {
+            header "SCIDonutRenderableSeries+Protected.h"
+            export *
+        }
+
+        explicit module SCIPieDonutDrawingManagerBase {
+            header "SCIPieDonutDrawingManagerBase+Protected.h"
+            export *
+        }
+
+        explicit module SCIPieSegmentLabelFormatterBase {
+            header "SCIPieSegmentLabelFormatterBase+Protected.h"
+            export *
+        }
+
+        explicit module SCIPieSegment {
+            header "SCIPieSegment+Protected.h"
+            export *
+        }
+
+        explicit module SCIPieDonutRenderPassData {
+            header "SCIPieDonutRenderPassData+Protected.h"
+            export *
+        }
+
+        explicit module SCISeriesRenderPassData {
+            header "SCISeriesRenderPassData+Protected.h"
+            export *
+        }
+
+        explicit module SCIXyzRenderPassData {
+            header "SCIXyzRenderPassData+Protected.h"
+            export *
+        }
+
+        explicit module SCIHlRenderPassData {
+            header "SCIHlRenderPassData+Protected.h"
+            export *
+        }
+
+        explicit module SCIPieSeriesTooltipBase {
+            header "SCIPieSeriesTooltipBase+Protected.h"
+            export *
+        }
+
+        explicit module SCISeriesTooltipBase {
+            header "SCISeriesTooltipBase+Protected.h"
+            export *
+        }
+
+        explicit module SCIStackedSeriesTooltipBase {
+            header "SCIStackedSeriesTooltipBase+Protected.h"
+            export *
+        }
+
+        explicit module SCISeriesTooltipCore {
+            header "SCISeriesTooltipCore+Protected.h"
+            export *
+        }
+
+        explicit module SCISeriesInfoProviderBase {
+            header "SCISeriesInfoProviderBase+Protected.h"
+            export *
+        }
+
+        explicit module SCIPieSeriesInfoProviderBase {
+            header "SCIPieSeriesInfoProviderBase+Protected.h"
+            export *
+        }
+
+        explicit module SCIHitProviderBase {
+            header "SCIHitProviderBase+Protected.h"
+            export *
+        }
+
+        explicit module SCIPieChartHitProviderBase {
+            header "SCIPieChartHitProviderBase+Protected.h"
+            export *
+        }
+
+        explicit module SCINearestPointProviderBase {
+            header "SCINearestPointProviderBase+Protected.h"
+            export *
+        }
+
+        explicit module SCISeriesInfo {
+            header "SCISeriesInfo+Protected.h"
+            export *
+        }
+
+        explicit module SCIIndexDateAxis {
+            header "SCIIndexDateAxis+Protected.h"
+            export *
+        }
+
+        explicit module SCIDateAxis {
+            header "SCIDateAxis+Protected.h"
+            export *
+        }
+
+        explicit module SCIAxisBase {
+            header "SCIAxisBase+Protected.h"
+            export *
+        }
+
+        explicit module SCILogarithmicNumericAxis {
+            header "SCILogarithmicNumericAxis+Protected.h"
+            export *
+        }
+
+        explicit module SCIAxisCore {
+            header "SCIAxisCore+Protected.h"
+            export *
+        }
+
+        explicit module SCINumericAxis {
+            header "SCINumericAxis+Protected.h"
+            export *
+        }
+
+        explicit module SCICategoryDateAxis {
+            header "SCICategoryDateAxis+Protected.h"
+            export *
+        }
+
+        explicit module SCIDefaultAxisInfoProvider {
+            header "SCIDefaultAxisInfoProvider+Protected.h"
+            export *
+        }
+
+        explicit module SCIAxisProviderBase {
+            header "SCIAxisProviderBase+Protected.h"
+            export *
+        }
+
+        explicit module SCILabelProviderBase {
+            header "SCILabelProviderBase+Protected.h"
+            export *
+        }
+
+        explicit module SCICalendarUnitDateFormatter {
+            header "SCICalendarUnitDateFormatter+Protected.h"
+            export *
+        }
+
+        explicit module SCICategoryLabelProviderBase {
+            header "SCICategoryLabelProviderBase+Protected.h"
+            export *
+        }
+
+        explicit module SCIFormatterLabelProviderBase {
+            header "SCIFormatterLabelProviderBase+Protected.h"
+            export *
+        }
+
+        explicit module SCIDateTickProvider {
+            header "SCIDateTickProvider+Protected.h"
+            export *
+        }
+
+        explicit module SCIDeltaTickProvider {
+            header "SCIDeltaTickProvider+Protected.h"
+            export *
+        }
+
+        explicit module SCITickProvider {
+            header "SCITickProvider+Protected.h"
+            export *
+        }
+
+        explicit module SCIRangeCalculationHelper2DBase {
+            header "SCIRangeCalculationHelper2DBase+Protected.h"
+            export *
+        }
+
+        explicit module SCIRangeCalculatorHelperBase {
+            header "SCIRangeCalculatorHelperBase+Protected.h"
+            export *
+        }
+
+        explicit module SCIAxisTooltip {
+            header "SCIAxisTooltip+Protected.h"
+            export *
+        }
+
+        explicit module SCILineAnnotationBase {
+            header "SCILineAnnotationBase+Protected.h"
+            export *
+        }
+
+        explicit module SCIAnchorPointAnnotation {
+            header "SCIAnchorPointAnnotation+Protected.h"
+            export *
+        }
+
+        explicit module SCIAnnotationLabel {
+            header "SCIAnnotationLabel+Protected.h"
+            export *
+        }
+
+        explicit module SCIVerticalLineAnnotation {
+            header "SCIVerticalLineAnnotation+Protected.h"
+            export *
+        }
+
+        explicit module SCIBoxAnnotation {
+            header "SCIBoxAnnotation+Protected.h"
+            export *
+        }
+
+        explicit module SCIAxisMarkerAnnotation {
+            header "SCIAxisMarkerAnnotation+Protected.h"
+            export *
+        }
+
+        explicit module SCILineAnnotationWithLabelsBase {
+            header "SCILineAnnotationWithLabelsBase+Protected.h"
+            export *
+        }
+
+        explicit module SCIAnnotationBase {
+            header "SCIAnnotationBase+Protected.h"
+            export *
+        }
+
+        explicit module SCIHorizontalLineAnnotation {
+            header "SCIHorizontalLineAnnotation+Protected.h"
+            export *
+        }
+
+        explicit module SCILineArrowAnnotation {
+            header "SCILineArrowAnnotation+Protected.h"
+            export *
+        }
+
+        explicit module SCITextLabelContainer {
+            header "SCITextLabelContainer+Protected.h"
+            export *
+        }
+
+        explicit module SCIPieChartSurface {
+            header "SCIPieChartSurface+Protected.h"
+            export *
+        }
+
+        explicit module SCIChartSurfaceBase {
+            header "SCIChartSurfaceBase+Protected.h"
+            export *
+        }
+
+        explicit module SCIChartSurface {
+            header "SCIChartSurface+Protected.h"
+            export *
+        }
+
+        explicit module SCIBaseRenderPassDataTransformation {
+            header "SCIBaseRenderPassDataTransformation+Protected.h"
+            export *
+        }
+
+        explicit module SCIWaveXyyTransformation {
+            header "SCIWaveXyyTransformation+Protected.h"
+            export *
+        }
+
+        explicit module SCIWaveHlTransformation {
+            header "SCIWaveHlTransformation+Protected.h"
+            export *
+        }
+
+        explicit module SCISplineWaveXyTransformation {
+            header "SCISplineWaveXyTransformation+Protected.h"
+            export *
+        }
+
+        explicit module SCISplineWaveXyyTransformation {
+            header "SCISplineWaveXyyTransformation+Protected.h"
+            export *
+        }
+
+        explicit module SCIWaveTransformationBase {
+            header "SCIWaveTransformationBase+Protected.h"
+            export *
+        }
+
+        explicit module SCIWaveStackedXyTransformation {
+            header "SCIWaveStackedXyTransformation+Protected.h"
+            export *
+        }
+
+        explicit module SCIWaveOhlcTransformation {
+            header "SCIWaveOhlcTransformation+Protected.h"
+            export *
+        }
+
+        explicit module SCIWaveXyTransformation {
+            header "SCIWaveXyTransformation+Protected.h"
+            export *
+        }
+
+        explicit module SCISweepXyTransformation {
+            header "SCISweepXyTransformation+Protected.h"
+            export *
+        }
+
+        explicit module SCISplineSweepXyTransformation {
+            header "SCISplineSweepXyTransformation+Protected.h"
+            export *
+        }
+
+        explicit module SCISplineSweepXyyTransformation {
+            header "SCISplineSweepXyyTransformation+Protected.h"
+            export *
+        }
+
+        explicit module SCISweepXyyTransformation {
+            header "SCISweepXyyTransformation+Protected.h"
+            export *
+        }
+
+        explicit module SCITranslateStackedXyTransformation {
+            header "SCITranslateStackedXyTransformation+Protected.h"
+            export *
+        }
+
+        explicit module SCISplineXyTranslateYTransformation {
+            header "SCISplineXyTranslateYTransformation+Protected.h"
+            export *
+        }
+
+        explicit module SCISplineXyyTranslateXTransformation {
+            header "SCISplineXyyTranslateXTransformation+Protected.h"
+            export *
+        }
+
+        explicit module SCITranslateOhlcTransformation {
+            header "SCITranslateOhlcTransformation+Protected.h"
+            export *
+        }
+
+        explicit module SCITranslateXyTransformationBase {
+            header "SCITranslateXyTransformationBase+Protected.h"
+            export *
+        }
+
+        explicit module SCITranslateXyTransformation {
+            header "SCITranslateXyTransformation+Protected.h"
+            export *
+        }
+
+        explicit module SCITranslateHlTransformation {
+            header "SCITranslateHlTransformation+Protected.h"
+            export *
+        }
+
+        explicit module SCITranslateXTransformation {
+            header "SCITranslateXTransformation+Protected.h"
+            export *
+        }
+
+        explicit module SCISplineXyyTranslateYTransformation {
+            header "SCISplineXyyTranslateYTransformation+Protected.h"
+            export *
+        }
+
+        explicit module SCITranslateXyyTransformation {
+            header "SCITranslateXyyTransformation+Protected.h"
+            export *
+        }
+
+        explicit module SCISplineXyTranslateXTransformation {
+            header "SCISplineXyTranslateXTransformation+Protected.h"
+            export *
+        }
+
+        explicit module SCIScaleXyyTransformation {
+            header "SCIScaleXyyTransformation+Protected.h"
+            export *
+        }
+
+        explicit module SCISplineScaleXyTransformation {
+            header "SCISplineScaleXyTransformation+Protected.h"
+            export *
+        }
+
+        explicit module SCIScaleXyTransformation {
+            header "SCIScaleXyTransformation+Protected.h"
+            export *
+        }
+
+        explicit module SCIScaleOhlcTransformation {
+            header "SCIScaleOhlcTransformation+Protected.h"
+            export *
+        }
+
+        explicit module SCIScaleHlTransformation {
+            header "SCIScaleHlTransformation+Protected.h"
+            export *
+        }
+
+        explicit module SCIScaleStackedXyTransformation {
+            header "SCIScaleStackedXyTransformation+Protected.h"
+            export *
+        }
+
+        explicit module SCISplineScaleXyyTransformation {
+            header "SCISplineScaleXyyTransformation+Protected.h"
+            export *
+        }
+
+        explicit module SCIScaleXyzTransformation {
+            header "SCIScaleXyzTransformation+Protected.h"
+            export *
+        }
+
+        explicit module SCIScaleTransformationBase {
+            header "SCIScaleTransformationBase+Protected.h"
+            export *
+        }
+
+        explicit module SCIPropertyHelper {
+            header "SCIPropertyHelper+Protected.h"
+            export *
+        }
+        //EndAutogen
+    }
+}
+
+module SciChart.Swift {
+    header "SciChart-Swift.h"
+    requires objc
+}

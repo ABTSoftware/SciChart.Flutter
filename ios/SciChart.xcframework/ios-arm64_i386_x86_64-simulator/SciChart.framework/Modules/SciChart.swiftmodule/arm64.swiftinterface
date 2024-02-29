@@ -1,0 +1,392 @@
+// swift-interface-format-version: 1.0
+// swift-compiler-version: Apple Swift version 5.5.2 (swiftlang-1300.0.47.5 clang-1300.0.29.30)
+// swift-module-flags: -target arm64-apple-ios9.0-simulator -enable-objc-interop -enable-library-evolution -swift-version 5 -enforce-exclusivity=checked -O -module-name SciChart
+@_exported import SciChart
+import Swift
+import _Concurrency
+extension SciChart.SCILinearGradientPenStyle {
+  convenience public init(gradientStyle: SciChart.SCILinearGradientBrushStyle, thickness: Swift.Float, strokeDashArray: [Foundation.NSNumber]? = nil, antiAliasing: Swift.Bool = true)
+}
+extension SciChart.ISCIUniformHeatmapDataSeriesValues {
+  public func getStartX<TX>() -> TX where TX : Swift.Comparable
+  public func getStepX<TX>() -> TX where TX : Swift.Comparable
+  public func getStartY<TY>() -> TY where TY : Swift.Comparable
+  public func getStepY<TY>() -> TY where TY : Swift.Comparable
+  public func getXValue<TX>(at index: Swift.Int) -> TX where TX : Swift.Comparable
+  public func getYValue<TY>(at index: Swift.Int) -> TY where TY : Swift.Comparable
+  public func getZValue<TZ>(atXIndex: Swift.Int, yIndex: Swift.Int) -> TZ where TZ : Swift.Comparable
+}
+extension SciChart.SCISolidBrushStyle {
+  convenience public init(color colorCode: Swift.UInt32)
+  convenience public init(color: SciChart.SCIColor)
+  @available(*, deprecated, message: "Please use init(color:) instead")
+  convenience public init(colorCode: Swift.UInt32)
+}
+extension SciChart.ISCIPathDrawingContext {
+  public func begin(with color: SciChart.ISCIPathColor, at point: CoreGraphics.CGPoint) -> SciChart.ISCIPathDrawingContext
+  public func move(to point: CoreGraphics.CGPoint) -> SciChart.ISCIPathDrawingContext
+  public func move<S>(to points: S) -> SciChart.ISCIPathDrawingContext where S : Swift.Sequence, S.Element == Swift.Float
+}
+extension SciChart.ISCIUniformHeatmapDataSeries {
+  public func setStartX<TX>(startX: TX) where TX : Swift.Comparable
+  public func setStepX<TX>(stepX: TX) where TX : Swift.Comparable
+  public func setStartY<TY>(startY: TY) where TY : Swift.Comparable
+  public func setStepY<TY>(stepY: TY) where TY : Swift.Comparable
+  public func update<TZ>(z: TZ, atX xIndex: Swift.Int, y yIndex: Swift.Int) where TZ : Swift.Comparable
+  public func update<TZ>(z: [TZ]) where TZ : Swift.Comparable
+  public func update<TZ>(z: [TZ], atX xIndex: Swift.Int, y yIndex: Swift.Int) where TZ : Swift.Comparable
+}
+extension SciChart.ISCIUniformGridDataSeries3DValues {
+  public func getStartX<TX>() -> TX where TX : Swift.Comparable
+  public func getStepX<TX>() -> TX where TX : Swift.Comparable
+  public func getStartZ<TZ>() -> TZ where TZ : Swift.Comparable
+  public func getStepZ<TZ>() -> TZ where TZ : Swift.Comparable
+}
+extension SciChart.SCIChartModifier3DCollection {
+  public func add(items: SciChart.ISCIChartModifier3D...)
+}
+extension SciChart.ISCIFreeSurfaceDataSeries3DValues {
+  public func getOffsetX<TX>() -> TX where TX : Swift.Comparable
+  public func getOffsetY<TY>() -> TY where TY : Swift.Comparable
+  public func getOffsetZ<TZ>() -> TZ where TZ : Swift.Comparable
+}
+extension SciChart.SCIAnnotationCollection {
+  public func add(items: SciChart.ISCIAnnotation...)
+}
+extension SciChart.SCIUniformGridDataSeries3D {
+  public func set<TX>(startX: TX) where TX : Swift.Comparable
+  public func set<TX>(stepX: TX) where TX : Swift.Comparable
+  public func set<TZ>(startZ: TZ) where TZ : Swift.Comparable
+  public func set<TZ>(stepZ: TZ) where TZ : Swift.Comparable
+}
+extension SciChart.SCICylindroidDataSeries3D {
+  public func getA<T>() -> T where T : Swift.Comparable
+  public func set<T>(a: T) where T : Swift.Comparable
+  public func getB<T>() -> T where T : Swift.Comparable
+  public func set<T>(b: T) where T : Swift.Comparable
+  public func getH<T>() -> T where T : Swift.Comparable
+  public func set<T>(h: T) where T : Swift.Comparable
+}
+extension SciChart.SCIRenderableSeriesCollection {
+  public func add(items: SciChart.ISCIRenderableSeries...)
+}
+public typealias SCIView = UIKit.UIView
+public typealias SCIColor = UIKit.UIColor
+public typealias SCIImage = UIKit.UIImage
+extension SciChart.SCIBoolValues {
+  public var itemsArray: [Swift.Bool] {
+    get
+  }
+  convenience public init<S>(_ s: S) where S : Swift.Sequence, S.Element == Swift.Bool
+  public func add<S>(_ s: S) where S : Swift.Sequence, S.Element == Swift.Bool
+  @inlinable public func withUnsafePointer<R>(_ body: (Swift.UnsafePointer<ObjectiveC.ObjCBool>) throws -> R) rethrows -> R {
+        return try body(__itemsArray)
+    }
+  @inlinable public func withUnsafeMutablePointer<R>(_ body: (Swift.UnsafeMutablePointer<ObjectiveC.ObjCBool>) throws -> R) rethrows -> R {
+        return try body(__itemsArray)
+    }
+}
+extension SciChart.SCIByteValues {
+  public var itemsArray: [Swift.Int8] {
+    get
+  }
+  convenience public init<S>(_ s: S) where S : Swift.Sequence, S.Element == Swift.Int8
+  public func add<S>(_ s: S) where S : Swift.Sequence, S.Element == Swift.Int8
+  @inlinable public func withUnsafePointer<R>(_ body: (Swift.UnsafePointer<Swift.Int8>) throws -> R) rethrows -> R {
+        return try body(__itemsArray)
+    }
+  @inlinable public func withUnsafeMutablePointer<R>(_ body: (Swift.UnsafeMutablePointer<Swift.Int8>) throws -> R) rethrows -> R {
+        return try body(__itemsArray)
+    }
+}
+extension SciChart.SCIUnsignedByteValues {
+  public var itemsArray: [Swift.UInt8] {
+    get
+  }
+  convenience public init<S>(_ s: S) where S : Swift.Sequence, S.Element == Swift.UInt8
+  public func add<S>(_ s: S) where S : Swift.Sequence, S.Element == Swift.UInt8
+  @inlinable public func withUnsafePointer<R>(_ body: (Swift.UnsafePointer<Swift.UInt8>) throws -> R) rethrows -> R {
+        return try body(__itemsArray)
+    }
+  @inlinable public func withUnsafeMutablePointer<R>(_ body: (Swift.UnsafeMutablePointer<Swift.UInt8>) throws -> R) rethrows -> R {
+        return try body(__itemsArray)
+    }
+}
+extension SciChart.SCIShortValues {
+  public var itemsArray: [Swift.Int16] {
+    get
+  }
+  convenience public init<S>(_ s: S) where S : Swift.Sequence, S.Element == Swift.Int16
+  public func add<S>(_ s: S) where S : Swift.Sequence, S.Element == Swift.Int16
+  @inlinable public func withUnsafePointer<R>(_ body: (Swift.UnsafePointer<Swift.Int16>) throws -> R) rethrows -> R {
+        return try body(__itemsArray)
+    }
+  @inlinable public func withUnsafeMutablePointer<R>(_ body: (Swift.UnsafeMutablePointer<Swift.Int16>) throws -> R) rethrows -> R {
+        return try body(__itemsArray)
+    }
+}
+extension SciChart.SCIUnsignedShortValues {
+  public var itemsArray: [Swift.UInt16] {
+    get
+  }
+  convenience public init<S>(_ s: S) where S : Swift.Sequence, S.Element == Swift.UInt16
+  public func add<S>(_ s: S) where S : Swift.Sequence, S.Element == Swift.UInt16
+  @inlinable public func withUnsafePointer<R>(_ body: (Swift.UnsafePointer<Swift.UInt16>) throws -> R) rethrows -> R {
+        return try body(__itemsArray)
+    }
+  @inlinable public func withUnsafeMutablePointer<R>(_ body: (Swift.UnsafeMutablePointer<Swift.UInt16>) throws -> R) rethrows -> R {
+        return try body(__itemsArray)
+    }
+}
+extension SciChart.SCIIntegerValues {
+  public var itemsArray: [Swift.Int] {
+    get
+  }
+  convenience public init<S>(_ s: S) where S : Swift.Sequence, S.Element == Swift.Int
+  public func add<S>(_ s: S) where S : Swift.Sequence, S.Element == Swift.Int
+  @inlinable public func withUnsafePointer<R>(_ body: (Swift.UnsafePointer<Swift.Int32>) throws -> R) rethrows -> R {
+        return try body(__itemsArray)
+    }
+  @inlinable public func withUnsafeMutablePointer<R>(_ body: (Swift.UnsafeMutablePointer<Swift.Int32>) throws -> R) rethrows -> R {
+        return try body(__itemsArray)
+    }
+}
+extension SciChart.SCIUnsignedIntegerValues {
+  public var itemsArray: [Swift.UInt32] {
+    get
+  }
+  convenience public init<S>(_ s: S) where S : Swift.Sequence, S.Element == Swift.UInt32
+  public func add<S>(_ s: S) where S : Swift.Sequence, S.Element == Swift.UInt32
+  @inlinable public func withUnsafePointer<R>(_ body: (Swift.UnsafePointer<Swift.UInt32>) throws -> R) rethrows -> R {
+        return try body(__itemsArray)
+    }
+  @inlinable public func withUnsafeMutablePointer<R>(_ body: (Swift.UnsafeMutablePointer<Swift.UInt32>) throws -> R) rethrows -> R {
+        return try body(__itemsArray)
+    }
+}
+extension SciChart.SCILongValues {
+  public var itemsArray: [Swift.Int64] {
+    get
+  }
+  convenience public init<S>(_ s: S) where S : Swift.Sequence, S.Element == Swift.Int64
+  public func add<S>(_ s: S) where S : Swift.Sequence, S.Element == Swift.Int64
+  @inlinable public func withUnsafePointer<R>(_ body: (Swift.UnsafePointer<Swift.Int64>) throws -> R) rethrows -> R {
+        return try body(__itemsArray)
+    }
+  @inlinable public func withUnsafeMutablePointer<R>(_ body: (Swift.UnsafeMutablePointer<Swift.Int64>) throws -> R) rethrows -> R {
+        return try body(__itemsArray)
+    }
+}
+extension SciChart.SCIUnsignedLongValues {
+  public var itemsArray: [Swift.UInt64] {
+    get
+  }
+  convenience public init<S>(_ s: S) where S : Swift.Sequence, S.Element == Swift.UInt64
+  public func add<S>(_ s: S) where S : Swift.Sequence, S.Element == Swift.UInt64
+  @inlinable public func withUnsafePointer<R>(_ body: (Swift.UnsafePointer<Swift.UInt64>) throws -> R) rethrows -> R {
+        return try body(__itemsArray)
+    }
+  @inlinable public func withUnsafeMutablePointer<R>(_ body: (Swift.UnsafeMutablePointer<Swift.UInt64>) throws -> R) rethrows -> R {
+        return try body(__itemsArray)
+    }
+}
+extension SciChart.SCIFloatValues {
+  public var itemsArray: [Swift.Float] {
+    get
+  }
+  convenience public init<S>(_ s: S) where S : Swift.Sequence, S.Element == Swift.Float
+  public func add<S>(_ s: S) where S : Swift.Sequence, S.Element == Swift.Float
+  @inlinable public func withUnsafePointer<R>(_ body: (Swift.UnsafePointer<Swift.Float>) throws -> R) rethrows -> R {
+        return try body(__itemsArray)
+    }
+  @inlinable public func withUnsafeMutablePointer<R>(_ body: (Swift.UnsafeMutablePointer<Swift.Float>) throws -> R) rethrows -> R {
+        return try body(__itemsArray)
+    }
+}
+extension SciChart.SCIDoubleValues {
+  public var itemsArray: [Swift.Double] {
+    get
+  }
+  convenience public init<S>(_ s: S) where S : Swift.Sequence, S.Element == Swift.Double
+  public func add<S>(_ s: S) where S : Swift.Sequence, S.Element == Swift.Double
+  @inlinable public func withUnsafePointer<R>(_ body: (Swift.UnsafePointer<Swift.Double>) throws -> R) rethrows -> R {
+        return try body(__itemsArray)
+    }
+  @inlinable public func withUnsafeMutablePointer<R>(_ body: (Swift.UnsafeMutablePointer<Swift.Double>) throws -> R) rethrows -> R {
+        return try body(__itemsArray)
+    }
+}
+extension SciChart.SCIDateValues {
+  public var itemsArray: [Swift.Double] {
+    get
+  }
+  convenience public init<S>(_ s: S) where S : Swift.Sequence, S.Element == Foundation.Date
+  convenience public init<S>(_ s: S) where S : Swift.Sequence, S.Element == Swift.Double
+  public func addTimes<S>(_ s: S) where S : Swift.Sequence, S.Element == Swift.Double
+  @inlinable public func withUnsafePointer<R>(_ body: (Swift.UnsafePointer<Swift.Double>) throws -> R) rethrows -> R {
+        return try body(__itemsArray)
+    }
+  @inlinable public func withUnsafeMutablePointer<R>(_ body: (Swift.UnsafeMutablePointer<Swift.Double>) throws -> R) rethrows -> R {
+        return try body(__itemsArray)
+    }
+}
+extension SciChart.SCIGradientColorPalette {
+  convenience public init<C, S>(colors: C, stops: S, isStepped: Swift.Bool = false) where C : Swift.Sequence, S : Swift.Sequence, C.Element == Swift.UInt32, S.Element == Swift.Float
+}
+extension SciChart.SCIRadialGradientBrushStyle {
+  convenience public init(center: CoreGraphics.CGPoint = CGPoint(x: 0.5, y: 0.5), radius: CoreGraphics.CGFloat = 0.5, centerColor: SciChart.SCIColor, edgeColor: SciChart.SCIColor)
+  convenience public init(center: CoreGraphics.CGPoint = CGPoint(x: 0.5, y: 0.5), radius: CoreGraphics.CGFloat = 0.5, centerColor: Swift.UInt32, edgeColor: Swift.UInt32)
+  convenience public init<C, S>(center: CoreGraphics.CGPoint = CGPoint(x: 0.5, y: 0.5), radius: CoreGraphics.CGFloat = 0.5, colors: C, stops: S) where C : Swift.Sequence, S : Swift.Sequence, C.Element == Swift.UInt32, S.Element == Swift.Float
+}
+extension SciChart.ISCIXyyDataSeries {
+  public func append<TX, TY>(x: TX, y: TY, y1: TY) where TX : Swift.Comparable, TY : Swift.Comparable
+  public func append<TX, TY>(x: [TX], y: [TY], y1: [TY]) where TX : Swift.Comparable, TY : Swift.Comparable
+  public func insert<TX, TY>(x: TX, y: TY, y1: TY, at index: Swift.Int) where TX : Swift.Comparable, TY : Swift.Comparable
+  public func insert<TX, TY>(x: [TX], y: [TY], y1: [TY], at index: Swift.Int) where TX : Swift.Comparable, TY : Swift.Comparable
+  public func update<TX>(x: TX, at index: Swift.Int) where TX : Swift.Comparable
+  public func update<TY>(y: TY, at index: Swift.Int) where TY : Swift.Comparable
+  public func update<TY>(y1: TY, at index: Swift.Int) where TY : Swift.Comparable
+  public func update<TX, TY>(x: TX, y: TY, y1: TY, at index: Swift.Int) where TX : Swift.Comparable, TY : Swift.Comparable
+  public func update<TX>(x: [TX], at index: Swift.Int) where TX : Swift.Comparable
+  public func update<TY>(y: [TY], at index: Swift.Int) where TY : Swift.Comparable
+  public func update<TY>(y1: [TY], at index: Swift.Int) where TY : Swift.Comparable
+  public func update<TX, TY>(x: [TX], y: [TY], y1: [TY], at index: Swift.Int) where TX : Swift.Comparable, TY : Swift.Comparable
+}
+extension SciChart.SCISolidPenStyle {
+  convenience public init(color: SciChart.SCIColor, thickness: Swift.Float, strokeDashArray: [Foundation.NSNumber]? = nil, antiAliasing: Swift.Bool = true)
+  convenience public init(color: Swift.UInt32, thickness: Swift.Float, strokeDashArray: [Foundation.NSNumber]? = nil, antiAliasing: Swift.Bool = true)
+  @available(*, deprecated, message: "Please use init(color:thickness:strokeDashArray:antiAliasing:) instead")
+  convenience public init(colorCode: Swift.UInt32, thickness: Swift.Float, strokeDashArray: [Foundation.NSNumber]? = nil, antiAliasing: Swift.Bool = true)
+}
+extension SciChart.ISCIXyDataSeries {
+  public func append<TX, TY>(x: TX, y: TY) where TX : Swift.Comparable, TY : Swift.Comparable
+  public func append<TX, TY>(x: [TX], y: [TY]) where TX : Swift.Comparable, TY : Swift.Comparable
+  public func insert<TX, TY>(x: TX, y: TY, at index: Swift.Int) where TX : Swift.Comparable, TY : Swift.Comparable
+  public func insert<TX, TY>(x: [TX], y: [TY], at index: Swift.Int) where TX : Swift.Comparable, TY : Swift.Comparable
+  public func update<TX>(x: TX, at index: Swift.Int) where TX : Swift.Comparable
+  public func update<TY>(y: TY, at index: Swift.Int) where TY : Swift.Comparable
+  public func update<TX, TY>(x: TX, y: TY, at index: Swift.Int) where TX : Swift.Comparable, TY : Swift.Comparable
+  public func update<TX>(x: [TX], at index: Swift.Int) where TX : Swift.Comparable
+  public func update<TY>(y: [TY], at index: Swift.Int) where TY : Swift.Comparable
+  public func update<TX, TY>(x: [TX], y: [TY], at index: Swift.Int) where TX : Swift.Comparable, TY : Swift.Comparable
+}
+extension SciChart.ISCIOhlcDataSeries {
+  public func append<TX, TY>(x: TX, open: TY, high: TY, low: TY, close: TY) where TX : Swift.Comparable, TY : Swift.Comparable
+  public func append<TX, TY>(x: [TX], open: [TY], high: [TY], low: [TY], close: [TY]) where TX : Swift.Comparable, TY : Swift.Comparable
+  public func insert<TX, TY>(x: TX, open: TY, high: TY, low: TY, close: TY, at index: Swift.Int) where TX : Swift.Comparable, TY : Swift.Comparable
+  public func insert<TX, TY>(x: [TX], open: [TY], high: [TY], low: [TY], close: [TY], ad index: Swift.Int) where TX : Swift.Comparable, TY : Swift.Comparable
+  public func update<TY>(open: TY, high: TY, low: TY, close: TY, at index: Swift.Int) where TY : Swift.Comparable
+  public func update<TY>(open: [TY], high: [TY], low: [TY], close: [TY], at index: Swift.Int) where TY : Swift.Comparable
+}
+extension SciChart.ISCIXyzDataSeries {
+  public func append<TX, TY, TZ>(x: TX, y: TY, z: TZ) where TX : Swift.Comparable, TY : Swift.Comparable, TZ : Swift.Comparable
+  public func append<TX, TY, TZ>(x: [TX], y: [TY], z: [TZ]) where TX : Swift.Comparable, TY : Swift.Comparable, TZ : Swift.Comparable
+  public func insert<TX, TY, TZ>(x: TX, y: TY, z: TZ, at index: Swift.Int) where TX : Swift.Comparable, TY : Swift.Comparable, TZ : Swift.Comparable
+  public func insert<TX, TY, TZ>(x: [TX], y: [TY], z: [TZ], at index: Swift.Int) where TX : Swift.Comparable, TY : Swift.Comparable, TZ : Swift.Comparable
+  public func update<TX>(x: TX, at index: Swift.Int) where TX : Swift.Comparable
+  public func update<TY>(y: TY, at index: Swift.Int) where TY : Swift.Comparable
+  public func update<TZ>(z: TZ, at index: Swift.Int) where TZ : Swift.Comparable
+  public func update<TX, TY, TZ>(x: TX, y: TY, z: TZ, at index: Swift.Int) where TX : Swift.Comparable, TY : Swift.Comparable, TZ : Swift.Comparable
+  public func update<TX>(x: [TX], at index: Swift.Int) where TX : Swift.Comparable
+  public func update<TY>(y: [TY], at index: Swift.Int) where TY : Swift.Comparable
+  public func update<TZ>(z: [TZ], at index: Swift.Int) where TZ : Swift.Comparable
+  public func update<TX, TY, TZ>(x: [TX], y: [TY], z: [TZ], at index: Swift.Int) where TX : Swift.Comparable, TY : Swift.Comparable, TZ : Swift.Comparable
+}
+extension SciChart.ISCIHlDataSeries {
+  public func append<TX, TY>(x: TX, y: TY, high: TY, low: TY) where TX : Swift.Comparable, TY : Swift.Comparable
+  public func append<TX, TY>(x: [TX], y: [TY], high: [TY], low: [TY]) where TX : Swift.Comparable, TY : Swift.Comparable
+  public func insert<TX, TY>(x: TX, y: TY, high: TY, low: TY, at index: Swift.Int) where TX : Swift.Comparable, TY : Swift.Comparable
+  public func insert<TX, TY>(x: [TX], y: [TY], high: [TY], low: [TY], ad index: Swift.Int) where TX : Swift.Comparable, TY : Swift.Comparable
+  public func update<TY>(y: TY, high: TY, low: TY, at index: Swift.Int) where TY : Swift.Comparable
+  public func update<TY>(y: [TY], high: [TY], low: [TY], at index: Swift.Int) where TY : Swift.Comparable
+}
+extension SciChart.ISCIRenderContext2D {
+  public func drawLines<S>(with pen: SciChart.ISCIPen2D, points: S) where S : Swift.Sequence, S.Element == Swift.Float
+  public func drawLinesStrip<S>(with pen: SciChart.ISCIPen2D, points: S) where S : Swift.Sequence, S.Element == Swift.Float
+  public func drawTrianglesStrip<S>(with brush: SciChart.ISCIBrush2D, points: S) where S : Swift.Sequence, S.Element == Swift.Float
+  public func drawRoundedRect(_ rect: CoreGraphics.CGRect, pen: SciChart.ISCIPen2D? = nil, brush: SciChart.ISCIBrush2D? = nil, topRadius: CoreGraphics.CGFloat, bottomRadius: CoreGraphics.CGFloat)
+  public func drawRects<S>(with pen: SciChart.ISCIPen2D, points: S) where S : Swift.Sequence, S.Element == Swift.Float
+  public func fillRects<S>(with brush: SciChart.ISCIBrush2D, points: S) where S : Swift.Sequence, S.Element == Swift.Float
+  public func drawRoundedRects<S>(with pen: SciChart.ISCIPen2D? = nil, brush: SciChart.ISCIBrush2D? = nil, topRadius: CoreGraphics.CGFloat, bottomRadius: CoreGraphics.CGFloat, points: S) where S : Swift.Sequence, S.Element == Swift.Float
+  public func drawEllipses<S>(with pen: SciChart.ISCIPen2D, points: S) where S : Swift.Sequence, S.Element == Swift.Float
+  public func fillEllipses<S>(with brush: SciChart.ISCIBrush2D, points: S) where S : Swift.Sequence, S.Element == Swift.Float
+  public func drawEllipses<S>(with pen: SciChart.ISCIPen2D, brush: SciChart.ISCIBrush2D, points: S) where S : Swift.Sequence, S.Element == Swift.Float
+  public func drawTexture(_ texture: SciChart.ISCITexture2D, in rect: CoreGraphics.CGRect, withOpacity: Swift.Float = 1.0)
+  public func drawTextures<S>(_ texture: SciChart.ISCITexture2D, points: S, withOpacity: Swift.Float = 1.0) where S : Swift.Sequence, S.Element == Swift.Float
+  public func drawSprites<S>(_ sprite: SciChart.ISCITexture2D, points: S, withOpacity: Swift.Float = 1.0) where S : Swift.Sequence, S.Element == Swift.Float
+}
+extension SciChart.SCIAxisCollection {
+  public func add(items: SciChart.ISCIAxis...)
+}
+extension SciChart.SCIRenderableSeries3DCollection {
+  public func add(items: SciChart.ISCIRenderableSeries3D...)
+}
+extension SciChart.SCITexturePenStyle {
+  convenience public init(textureBrushStyle: SciChart.SCITextureBrushStyle, thickness: Swift.Float, strokeDashArray: [Foundation.NSNumber]? = nil, antiAliasing: Swift.Bool = true)
+}
+extension SciChart.SCILinearGradientBrushStyle {
+  convenience public init(start: CoreGraphics.CGPoint = CGPoint(x: 0, y: 0), end: CoreGraphics.CGPoint = CGPoint(x: 1, y: 0), startColor: SciChart.SCIColor, endColor: SciChart.SCIColor)
+  convenience public init(start: CoreGraphics.CGPoint = CGPoint(x: 0, y: 0), end: CoreGraphics.CGPoint = CGPoint(x: 1, y: 0), startColor: Swift.UInt32, endColor: Swift.UInt32)
+  convenience public init<C, S>(start: CoreGraphics.CGPoint = CGPoint(x: 0, y: 0), end: CoreGraphics.CGPoint = CGPoint(x: 1, y: 0), colors: C, stops: S) where C : Swift.Sequence, S : Swift.Sequence, C.Element == Swift.UInt32, S.Element == Swift.Float
+}
+extension SciChart.SCIPolarDataSeries3D {
+  public func getA<T>() -> T where T : Swift.Comparable
+  public func set<T>(a: T) where T : Swift.Comparable
+  public func getB<T>() -> T where T : Swift.Comparable
+  public func set<T>(b: T) where T : Swift.Comparable
+}
+extension SciChart.ISCIXyzDataSeries3D {
+  public func append<TX, TY, TZ>(x: TX, y: TY, z: TZ) where TX : Swift.Comparable, TY : Swift.Comparable, TZ : Swift.Comparable
+  public func append<TX, TY, TZ>(x: [TX], y: [TY], z: [TZ]) where TX : Swift.Comparable, TY : Swift.Comparable, TZ : Swift.Comparable
+  public func insert<TX, TY, TZ>(x: TX, y: TY, z: TZ, at index: Swift.Int) where TX : Swift.Comparable, TY : Swift.Comparable, TZ : Swift.Comparable
+  public func insert<TX, TY, TZ>(x: [TX], y: [TY], z: [TZ], at index: Swift.Int) where TX : Swift.Comparable, TY : Swift.Comparable, TZ : Swift.Comparable
+  public func update<TX>(x: TX, at index: Swift.Int) where TX : Swift.Comparable
+  public func update<TY>(y: TY, at index: Swift.Int) where TY : Swift.Comparable
+  public func update<TZ>(z: TZ, at index: Swift.Int) where TZ : Swift.Comparable
+  public func update<TX, TY, TZ>(x: TX, y: TY, z: TZ, at index: Swift.Int) where TX : Swift.Comparable, TY : Swift.Comparable, TZ : Swift.Comparable
+  public func update<TX>(x: [TX], at index: Swift.Int) where TX : Swift.Comparable
+  public func update<TY>(y: [TY], at index: Swift.Int) where TY : Swift.Comparable
+  public func update<TZ>(z: [TZ], at index: Swift.Int) where TZ : Swift.Comparable
+  public func update<TX, TY, TZ>(x: [TX], y: [TY], z: [TZ], at index: Swift.Int) where TX : Swift.Comparable, TY : Swift.Comparable, TZ : Swift.Comparable
+}
+extension SciChart.SCIChartModifierCollection {
+  public func add(items: SciChart.ISCIChartModifier...)
+}
+extension SciChart.ISCIAnnotation {
+  public func getX1<T>() -> T where T : Swift.Comparable
+  public func set<T>(x1: T) where T : Swift.Comparable
+  public func getY1<T>() -> T where T : Swift.Comparable
+  public func set<T>(y1: T) where T : Swift.Comparable
+  public func getX2<T>() -> T where T : Swift.Comparable
+  public func set<T>(x2: T) where T : Swift.Comparable
+  public func getY2<T>() -> T where T : Swift.Comparable
+  public func set<T>(y2: T) where T : Swift.Comparable
+}
+extension SciChart.SCIDisplaceableFreeSurfaceDataSeries3D {
+  public func setDisplacement<T>(_ displacement: T, atU uIndex: Swift.Int, v vIndex: Swift.Int) where T : Swift.Comparable
+  public func push<TY>(_ row: [TY]) where TY : Swift.Comparable
+  public func set<TY>(_ row: [TY], at index: Swift.Int) where TY : Swift.Comparable
+  public func copy<TY>(from values: [TY]) where TY : Swift.Comparable
+}
+extension SciChart.SCIRadialGradientPenStyle {
+  convenience public init(gradientStyle: SciChart.SCIRadialGradientBrushStyle, thickness: Swift.Float, strokeDashArray: [Foundation.NSNumber]? = nil, antiAliasing: Swift.Bool = true)
+}
+extension SciChart.ISCIGridDataSeries3DValues {
+  public func getXValue<TX>(at index: Swift.Int) -> TX where TX : Swift.Comparable
+  public func getYValueAt<TY>(x xIndex: Swift.Int, z zIndex: Swift.Int) -> TY where TY : Swift.Comparable
+  public func getZValue<TZ>(at index: Swift.Int) -> TZ where TZ : Swift.Comparable
+}
+extension SciChart.SCIEllipsoidDataSeries3D {
+  public func getA<T>() -> T where T : Swift.Comparable
+  public func set<T>(a: T) where T : Swift.Comparable
+  public func getB<T>() -> T where T : Swift.Comparable
+  public func set<T>(b: T) where T : Swift.Comparable
+  public func getC<T>() -> T where T : Swift.Comparable
+  public func set<T>(c: T) where T : Swift.Comparable
+}
+extension SciChart.SCIBaseGridDataSeries3D {
+  public func update<TY>(y: TY, atX xIndex: Swift.Int, z zIndex: Swift.Int) where TY : Swift.Comparable
+  public func push<TY>(_ row: [TY]) where TY : Swift.Comparable
+  public func set<TY>(_ row: [TY], at index: Swift.Int) where TY : Swift.Comparable
+  public func copy<TY>(from values: [TY]) where TY : Swift.Comparable
+}

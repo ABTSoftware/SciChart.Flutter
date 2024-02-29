@@ -7,12 +7,15 @@ import 'package:flutter/widgets.dart';
 typedef SciChartSurfaceCreatedCallback = void Function(
     SciChartSurfaceController controller);
 
-class SciChart extends StatelessWidget{
-
+class SciChart extends StatelessWidget {
   final SciChartSurfaceCreatedCallback onSciChartSurfaceCreated;
   final String viewType;
 
-  const SciChart({Key? key, required this.viewType, required this.onSciChartSurfaceCreated}) : super(key: key);
+  const SciChart(
+      {Key? key,
+      required this.viewType,
+      required this.onSciChartSurfaceCreated})
+      : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -25,28 +28,34 @@ class SciChart extends StatelessWidget{
             return AndroidViewSurface(
                 controller: controller as AndroidViewController,
                 hitTestBehavior: PlatformViewHitTestBehavior.opaque,
-                gestureRecognizers: const <Factory<OneSequenceGestureRecognizer>>{}
-            );
+                gestureRecognizers: const <Factory<
+                    OneSequenceGestureRecognizer>>{});
           },
-          onCreatePlatformView: (params){
-
-            final AndroidViewController controller = PlatformViewsService.initExpensiveAndroidView(
+          onCreatePlatformView: (params) {
+            final AndroidViewController controller =
+                PlatformViewsService.initExpensiveAndroidView(
               id: params.id,
               viewType: viewType,
               layoutDirection: TextDirection.ltr,
-              creationParams:creationParams,
+              creationParams: creationParams,
               creationParamsCodec: const StandardMessageCodec(),
             );
 
-            controller.addOnPlatformViewCreatedListener(params.onPlatformViewCreated);
+            controller
+                .addOnPlatformViewCreatedListener(params.onPlatformViewCreated);
             controller.addOnPlatformViewCreatedListener(_onPlatformViewCreated);
 
             return controller;
           },
         );
       case TargetPlatform.iOS:
-        return Text(
-            '$defaultTargetPlatform is in development.');
+        return UiKitView(
+          viewType: viewType,
+          layoutDirection: TextDirection.ltr,
+          onPlatformViewCreated: _onPlatformViewCreated,
+          creationParams: creationParams,
+          creationParamsCodec: const StandardMessageCodec(),
+        );
       default:
         return Text(
             '$defaultTargetPlatform is not yet supported by the web_view plugin');
@@ -57,11 +66,9 @@ class SciChart extends StatelessWidget{
       onSciChartSurfaceCreated(SciChartSurfaceController._(viewType, id));
 }
 
-
 class SciChartSurfaceController {
   SciChartSurfaceController._(String viewType, int id)
-      : _channel =
-  MethodChannel('${viewType}_$id');
+      : _channel = MethodChannel('${viewType}_$id');
 
   final MethodChannel _channel;
 
